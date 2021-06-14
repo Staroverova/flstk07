@@ -1,0 +1,59 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="t02. Charset">
+    <title>Charset</title>
+</head>
+<body>
+<h1>Charset</h1>
+<div>
+    <form action="/charset" method="post">
+        <label for="str">Change charset:</label>
+        <input id="str" type="text" name="str" placeholder="input string"><br><br>
+
+        <label for="sel">Select charset or several charsets:</label>
+        <select multiple id="sel" name="sel">
+            <option class="opt" name="utf" selected>UTF-8</option>
+            <option class="opt" name="iso">ISO-8859-1</option>
+            <option class="opt" name="win">Windows-1252</option>
+        </select>
+
+        <button type="submit">Change charset</button>
+        <input type="reset" value="Clear" onclick="location.replace('/')">
+    </form>
+
+
+    <div id="items">
+        <div class="hidden" style="display: none">
+            <label for="input">Input string: </label>
+            <textarea name="input" id="input" thjs:text="${input}"></textarea>
+        </div>
+        <div class="hidden" style="display: none">
+            <label for="utf">UTF-8: </label>
+            <textarea name="utf" id="utf" thjs:text="${utf}"></textarea>
+        </div>
+        <div class="hidden" style="display: none">
+            <label for="iso">ISO-8859-1: </label>
+            <textarea name="iso" id="iso" thjs:text="${iso}"></textarea>
+        </div>
+        <div class="hidden" style="display: none">
+            <label for="win">Windows-1252: </label>
+            <textarea name="win" id="win" thjs:text="${win}"></textarea>
+        </div>
+        <script>
+            let hidden = document.querySelectorAll('.hidden')
+            hidden.forEach(elem => {
+                if (elem.childNodes[3].innerHTML !== '') {
+                    elem.setAttribute('style', 'display: block;');
+                }
+            })
+        </script>
+    </div>
+
+    <p thjs:text="${errorMsg}" style="color: red"></p>
+</div>
+<script src="./index.js"></script>
+</body>
+</html>

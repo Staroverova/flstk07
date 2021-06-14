@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="t00. Session for new">
+    <title>Session for new</title>
+    <style>
+        #main {
+            border: none;
+            padding-left: 40px;
+        }
+        #buttons {
+            padding: 20px;
+        }
+        input {
+            background: none;
+            border-color: lightgray;
+        }
+        textarea {
+            font-family: Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<h1>Session for new</h1>
+<fieldset id="main">
+    <code class="data">name: <span        thjs:text="${name}"></span></code><br>
+    <code class="data">alias:&emsp;<span       thjs:text="${alias}"></span></code><br>
+    <code class="data">age: <span         thjs:text="${age}"></span></code><br>
+    <code class="data">description: <span thjs:text="${description}"></span></code><br>
+    <code class="data">photo: <span       thjs:text="${photo}"></span></code><br>
+    <code class="data">experience: <span  thjs:text="${experience}"></span></code><br>
+    <code class="data">level: <span       thjs:text="${level}"></span></code><br>
+    <code class="data">purpose: <span     thjs:text="${purpose}"></span></code><br>
+</fieldset>
+
+<form action="/forget" method="POST">
+    <fieldset id="buttons">
+        <input type="submit" value="FORGET">
+    </fieldset>
+</form>
+
+
+</body>
+</html>

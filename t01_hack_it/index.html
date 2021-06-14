@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="t01. Hack it!">
+    <title>Hack it!</title>
+    <style>
+        p {margin: 2px;}
+        #answer {color: green;}
+    </style>
+</head>
+<body>
+<h1>Password</h1>
+<form action="/" method="post">
+    <p id="answer" thjs:text="${answer}"></p>
+    <p>Password not saved at session.</p>
+    <p>
+        <label for="sPassword">Password for saving to session</label>
+        <input required placeholder="Password to session" type="text" id="sPassword" name="savePassword">
+    </p>
+    <p>
+        <label for="salt">Salt for saving to session</label>
+        <input required placeholder="Salt to session" type="number" id="salt" name="salt">
+    </p>
+    <input type="submit" value="Save">
+</form>
+<script src="./index.js"></script>
+</body>
+</html>

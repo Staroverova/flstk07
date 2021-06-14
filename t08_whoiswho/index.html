@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="t08. WhoIsWho">
+    <title>WhoIsWho</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black
+        }
+    </style>
+</head>
+<body>
+    <h1>Parsing CSV data</h1>
+    <form action="/" method="post">
+        <label for="myFile"></label>
+        <input type="file" id="myFile" name="csv">
+        <input type="submit" value="Upload">
+    </form>
+    <br>
+    <table></table>
+    <p id="getTable" style="display: none" thjs:text="${table}"></p>
+</body>
+
+<script>
+    async function func() {
+        let table = JSON.parse(document.querySelector('#getTable').innerText)
+        let parent = document.querySelector('table')
+        table.forEach(item => {
+            parent.insertAdjacentHTML(
+                'beforeend',
+                `<tr>
+                    <td>${item[0]}</td>
+                    <td>${item[1]}</td>
+                    <td>${item[2]}</td>
+                    <td>${item[3]}</td>
+                    <td>${item[4]}</td>
+                    <td>${item[5]}</td>
+                    <td>${item[6]}</td>
+                    <td>${item[7]}</td>
+                    <td>${item[8]}</td>
+                    <td>${item[9]}</td>
+                    <td>${item[10]}</td>
+                </tr>`
+            )
+        })
+    }
+    window.onload = func
+</script>
+</html>

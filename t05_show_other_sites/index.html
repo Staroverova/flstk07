@@ -1,0 +1,36 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <meta name="description" content="t05. Show other sites">
+    <title>Show other sites</title>
+</head>
+<body>
+    <h1>Show other sites</h1>
+    <p thjs:text="${errorMsg}" style="color: red"></p>
+
+    <form action="/" method="post">
+        <label for="url"></label>
+        <input type="text" name="url" id="url" placeholder="url">
+        <input type="submit" value="go">
+        <a href="/delete">BACK</a>
+    </form>
+
+    <hr>
+    <div thjs:text="${url}"></div>
+    <hr>
+    <div id="con" thjs:text="${content}"></div>
+</body>
+<script src="./index.js"></script>
+<script>
+    function func() {
+        let html = JSON.parse(document.querySelector('#con').innerText)
+        let body = html.slice(html.indexOf('body')-1, html.indexOf('/body')+6)
+        document.querySelector('#con').innerText = body
+        console.log(body)
+    }
+    window.onload = func
+</script>
+</html>

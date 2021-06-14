@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="t06. Marvel API">
+    <title>Marvel API</title>
+    <style>
+        div {
+            width: 100%;
+            border: 1px solid red;
+            color: lightblue;
+            padding: 10px;
+            background-color: #191923;
+            margin: 2px;
+        }
+        span {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comics from marvel API</h1>
+    <div>code: <span id="code"></span></div>
+    <div>status: <span id="status"></span></div>
+    <div>copyright: <span id="copyright"></span></div>
+    <div>attrText: <span id="attrText"></span></div>
+    <div>attrHTML: <span id="attrHTML"></span></div>
+    <div>etag: <span id="etag"></span></div>
+    <br>
+    <div>offset: <span id="offset"></span></div>
+    <div>limit: <span id="limit"></span></div>
+    <div>total: <span id="total"></span></div>
+    <div>count: <span id="count"></span></div>
+
+</body>
+
+<script>
+    async function func() {
+        let url = 'https://gateway.marvel.com:443/v1/public/characters?apikey=366d13c242e7d58e1b048b5a8a52bd03'
+        let response = await fetch(url);
+        let res = await response.json()
+
+        document.getElementById('code').innerText = res.code
+        document.getElementById('status').innerText = res.status
+        document.getElementById('copyright').innerText = res.copyright
+        document.getElementById('attrText').innerText = res.attributionText
+        document.getElementById('attrHTML').innerText = res.attributionHTML
+        document.getElementById('etag').innerText = res.etag
+
+        document.getElementById('offset').innerText = res.data.offset
+        document.getElementById('limit').innerText = res.data.limit
+        document.getElementById('total').innerText = res.data.total
+        document.getElementById('count').innerText = res.data.count
+    }
+    window.onload = func
+</script>
+<script src="./index.js"></script>
+</html>

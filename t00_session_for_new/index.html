@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="t00. Session for new">
+    <title>Session for new</title>
+    <style>
+        form {
+            border: 2px solid gray;
+            padding: 20px;
+        }
+        button {
+            background: none;
+            border-color: lightgray;
+        }
+        textarea {
+            font-family: Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<h1>Session for new</h1>
+<form action="/" method="POST">
+    <fieldset>
+        <legend>About HERO</legend>
+        <br>
+        <label for="realName">Real Name</label>
+        <input required placeholder="Superhero real name" type="text" id="realName" name="name">
+        <label for="superName">Current Alias</label>
+        <input required placeholder="Superhero alias" type="text" id="superName" name="alias">
+        <label for="age">Age</label>
+        <input required type="number" min="1" max="999" id="age" name="age">
+        <br><br>
+        <label for="about">About</label>
+        <textarea placeholder="Information about the superhero, max 500 symbols" id="about" rows="5"
+                  cols="70" maxlength="500" name="description"></textarea>
+        <br><br>
+        <label for="photo">Photo</label>
+        <input type="file" id="photo" name="photo">
+    </fieldset>
+    <fieldset>
+        <legend>Powers</legend>
+        <br>
+        <input type="checkbox" id="telekinesis" name="experience" value="1">
+        <label for="telekinesis">Strength</label>
+
+        <input type="checkbox" id="speed" name="experience" value="1">
+        <label for="speed">Speed</label>
+
+        <input type="checkbox" id="shapeShifting" name="experience" value="1">
+        <label for="shapeShifting">Intelligence</label>
+
+        <input type="checkbox" id="flight" name="experience" value="1">
+        <label for="flight">Teleportation</label>
+
+        <input type="checkbox" id="elements" name="experience" value="1">
+        <label for="elements">Immortal</label>
+
+        <input type="checkbox" id="other" name="experience" value="1">
+        <label for="other">Another</label>
+        <br><br>
+        <label for="levelControl">Level of control:</label>
+        <input type="range" value="1" min="0" max="10" id="levelControl" name="level">
+    </fieldset>
+    <fieldset>
+        <legend>Publicity</legend>
+        <br>
+        <input type="radio" id="unknown" name="purpose" value="0">
+        <label for="unknown">UNKNOWN</label>
+        <input type="radio" id="accident" name="purpose" value="1">
+        <label for="accident">LIKE A GHOST</label>
+        <input type="radio" id="wise" name="purpose" value="2">
+        <label for="wise">I AM IN COMICS</label>
+        <input type="radio" id="notHuman" name="purpose" value="3">
+        <label for="notHuman">I HAVE FUN CLUB</label>
+        <input type="radio" id="other2" name="purpose" value="4">
+        <label for="other2">SUPERSTAR</label>
+        <br><br>
+    </fieldset>
+    <br>
+    <button type="reset">CLEAR</button>
+    <button type="submit">SEND</button>
+    <br>
+</form>
+<script src="./index.js"></script>
+</body>
+</html>

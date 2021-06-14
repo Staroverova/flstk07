@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:thjs="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="description" content="t01. Hack it!" charset="utf-8">
+    <title>Hack it!</title>
+    <style>
+        p {margin: 2px;}
+        #answer {color: red;}
+    </style>
+</head>
+<body>
+<h1>Password</h1>
+<p id="answer" thjs:text="${answer}"></p>
+<p>Password saved at session.</p>
+<p>Hash is <span thjs:text="${hash}"></span>.</p>
+<form action="/check" method="post">
+    <p>
+        <label for="newPassword">Password for saving to session</label>
+        <input type="text" id="newPassword" name="newPassword" placeholder="Password to session">
+        <input type="submit" value="Check password">
+    </p>
+</form>
+<form action="/clear" method="post">
+    <input type="submit" value="Clear">
+</form>
+</body>
+</html>
